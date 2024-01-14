@@ -39,10 +39,12 @@
 **`cat` Directory Argument**  
 ![Image](catDir.png)  
 
-- `cat` with directory as an argument - The program sends an error message saying that `lecture1/: is a directory and not a file`. Since the argument is not a file, `cat` cannot print out the file contents. This is an error, because `cat` has nothing to concatenate, since it needs file information but instead gets a folder as the argument.  
+- `cat` with directory as an argument - The working directory is the home directory. The program sends an error message saying that `lecture1/: is a directory and not a file`. Since the argument is not a file, `cat` cannot print out the file contents. This is an error, because `cat` has nothing to concatenate, since it needs file information but instead gets a folder as the argument.  
 
-**`cat` Directory Argument**  
-![Image](catDir.png)  
-- 
+**`cat` File Argument**  
+![Image](catFile.png)  
+
+- `cat` with file as an argument - The working directory is the home directory. The program looks at the contents of the file that contains “Bonjour le monde!” and prints those contents out. 
+
 
 
