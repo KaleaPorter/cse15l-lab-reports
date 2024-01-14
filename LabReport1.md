@@ -28,5 +28,21 @@
 **`ls` File Argument**  
 ![Image](lsFile.png) 
 
-- `ls` with a file argument - The working directory is the home directory. To pass a file in the `ls` command as an input, I used the path `lecture1/messages/zh-cn.txt`. The terminal cannot access any files or folders within a file, so instead it outputs the file name. This is not an error because the `ls` command just lists out the file details, such as the name.  
+- `ls` with a file argument - The working directory is the home directory. To pass a file in the `ls` command as an input, I used the path `lecture1/messages/zh-cn.txt`. The terminal cannot access any files or folders within a file, so instead it outputs the file name. This is not an error because the `ls` command just lists out the file details, such as the name.
+
+
+**`cat` No Argument**  
+![Image](catNoArg.png)  
+
+- `cat` no argument - The working directory is the home directory. Takes you to a new line, where whatever you type in is printed. `cat` doesn’t need an argument. In the case where you don’t give an argument, the program concatenates the word you type and prints it as an output. Without an argument, it understands the user input as a String, and not a file. In the image above, I typed in `hello world` and the terminal printed my message back as an output.
+
+**`cat` Directory Argument**  
+![Image](catDir.png)  
+
+- `cat` with directory as an argument - The program sends an error message saying that `lecture1/: is a directory and not a file`. Since the argument is not a file, `cat` cannot print out the file contents. This is an error, because `cat` has nothing to concatenate, since it needs file information but instead gets a folder as the argument.  
+
+**`cat` Directory Argument**  
+![Image](catDir.png)  
+- 
+
 
