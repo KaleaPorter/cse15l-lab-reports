@@ -8,22 +8,22 @@
   
 **`cd` Directory Argument**
 ![Image](cdDir.png)  
-- `cd` with directory argument:  The working directory was `home`when the `cd` command was run. When I used the `lecture1/` directory as the argument, the program changed the directory to `lecture1/`. `cd` successfully changes the directory to the directory I inputted, and this is shown on `[user@sahara ~/lecture1]`.  
+- `cd` with directory argument:  The working directory was `home` when the `cd` command was run. When I used the `lecture1/` directory as the argument, the program changed the directory to `lecture1/`. `cd` successfully changes the directory to the directory I inputted, and this is shown on `[user@sahara ~/lecture1]`.  
 
 **`cd` File Argument**
 ![Image](cdFile.png)  
-- `cd` with file argument: The working directory was `lecture1` when I inputted the `messages/en-us.txt` message file as an argument. This caused an error in the terminal. Since a file is not a directory because it cannot hold any files within it, `cd` cannot change the directory to the message file. This error is shown by a printed statement letting the user know that the argument was not a directory, and `cd` will not work.
+- `cd` with file argument: The working directory was `lecture1` when I inputted the `messages/en-us.txt` message file as an argument. This caused an error in the terminal, shown as `bash: cd: messages/en-us.txt: Not a directory`. Since a file is not a directory because it cannot hold any files within it, `cd` cannot change the directory to the message file. This error is shown by a printed statement letting the user know that the argument was not a directory, and `cd` will not work.
 
 
 **`ls` No Argument**  
 ![Image](lsNoArg.png)  
 
-- `ls` with no argument - `ls` lists out the files and folders in the current directory. In this case, the working directory is `home` and there is only one folder in `home` titled `lecture1`, and this is outputted in the terminal.
+- `ls` with no argument - `ls` lists out the files and folders in the current directory. In this case, the working directory is `home` and there is only one folder in `home` titled `lecture1`, and this is outputted in the terminal.  
 
 **`ls` Directory Argument**  
 ![Image](lsDir.png)  
 
-- `ls` with a directory argument - The working directory is still the home directory. When I use the directory `lecture1` as an argument, `ls` lists out the files and folders in the `lecture1` directory. These include `Hello.class`, `Hello.java`, `message`, and `README`. The `Hello.class` file came from compiling `Hello.java` earlier in the lab.
+- `ls` with a directory argument - The working directory is still the home directory. When I use the directory `lecture1` as an argument, `ls` lists out the files and folders in the `lecture1` directory. These include `Hello.class`, `Hello.java`, `message`, and `README`. The `Hello.class` file came from compiling `Hello.java` earlier in the lab. Another observation I found is that folders are shown as blue when listed out, whereas files are shown as regular color and font.  
 
 **`ls` File Argument**  
 ![Image](lsFile.png) 
@@ -39,12 +39,12 @@
 **`cat` Directory Argument**  
 ![Image](catDir.png)  
 
-- `cat` with directory as an argument - The working directory is the home directory. The program sends an error message saying that `lecture1/: is a directory and not a file`. Since the argument is not a file, `cat` cannot print out the file contents. This is an error, because `cat` has nothing to concatenate, since it needs file information but instead gets a folder as the argument.  
+- `cat` with directory as an argument - The working directory is the home directory. The program sends an error message saying that `lecture1/: is a directory` and not a file. Since the argument is not a file, `cat` cannot print out the file contents. This is an error, because `cat` has nothing to concatenate, since it needs file information but instead gets a folder as the argument.  
 
 **`cat` File Argument**  
 ![Image](catFile.png)  
 
-- `cat` with file as an argument - The working directory is the home directory. The program looks at the contents of the file that contains “Bonjour le monde!” and prints those contents out. 
+- `cat` with file as an argument - The working directory is the home directory. The program looks at the contents of the file from the path `lecture1/messages/fr.txt` which contains “Bonjour le monde!” and prints those contents out as the output. 
 
 
 
