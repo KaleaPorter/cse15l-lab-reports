@@ -1,4 +1,6 @@
-# Lab Report 1
+# Lab Report 1  
+
+  
 **`cd` No Argument: with `Home` as the working directory**\
 ![Image](cdNoArg.png)  
 **`cd` No Argument: with `lecture1` as the working directory**\
@@ -44,7 +46,7 @@
 **`cat` File Argument**  
 ![Image](catFile.png)  
 
-- `cat` with file as an argument - The working directory is the home directory. The program looks at the contents of the file from the path `lecture1/messages/fr.txt` which contains “Bonjour le monde!” and prints those contents out as the output. 
+- `cat` with file as an argument - The working directory is the home directory. The program looks at the contents of the file from the path `lecture1/messages/fr.txt` which contains `“Bonjour le monde!”` and prints those contents out as the output. 
 
 
 
