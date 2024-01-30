@@ -67,14 +67,17 @@ csGenius: we are hacking the mainframe
 ## Part 2  
 **1. The absolute path to the private key for the SSH key for logging into ieng6 (on your computer, an EdStem workspace, or on the home directory of the lab computer)**
 ![Image](privateKey.png)  
+I used VSCode to access the private key on my computer. The absolute path to the private key is `\Users\Kalea\.ssh\id_rsa` to access the private key. The other key in the `.ssh` directory is a public key, but the one we want to access is called `id_rsa`.  
 
 **2. The absolute path to the public key for your SSH key for logging into ieng6 (this is the one you copied to your account on ieng6, so it should be a path on ieng6's file system)**
 ![Image](publicKey.PNG)  
+I used Edstem on a lab computer to access the public key. The absolute path to the public key is `/home/linux/ieng6/oce/62/462/klporter/.ssh/authorized_keys`. The public key is within the file `authorized_keys`, and I used the command `ls -a` to view the directories and files starting with a period.  
 
 **3. A terminal interaction where you log into your ieng6 account without being asked for a password.**
 ![Image](noPassLogin.png)  
+As you can see from the image, I typed `ssh klporter@ieng6.ucsd.edu` in the terminal and was able to log in without having to type in a password.  
 
 
 ## Part 3  
-Before working through Lab 2, I had no idea that I could connect to a remote server. It was really cool (and also crazy to initially wrap my head around) that I could connect to another computer that wasn't mine in the CSE basement, and that my commands would run on the remote computer. Everything about servers was completely new to me, but I thought it was so interesting how we can create and join servers. 
+Before working through Lab 2, I had no idea that I could connect to a remote server. It was really cool (and also crazy to initially wrap my head around) that I could connect to another computer that wasn't mine in the CSE basement using `ssh`, and that my commands would run on the remote computer. Everything about servers was completely new to me, but I thought it was so interesting how we can create and join servers. I also thought it was interesting that the `man` command provides information on other commands or files.  
 
