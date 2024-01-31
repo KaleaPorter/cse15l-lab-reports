@@ -1,8 +1,7 @@
 # Lab Report 2  
 
 ## Part 1  
-**ChatServer.java code:**  
-(also uses Server.java with the URLHandler interface given to us in class)
+**ChatServer.java code:** (also uses Server.java with the URLHandler interface given to us in class)
 ```
 import java.io.IOException;
 import java.net.URI;
@@ -10,15 +9,14 @@ import java.util.List;
 
 class Handler implements URLHandler {
     String messages = "";
-
     public String handleRequest(URI url){
         String query = url.getQuery();
         if (url.getPath().equals("/add-message")) {
             if(query.startsWith("s=")) {
-                String[] splitInput = url.getQuery().split("="); //split query into ["s", "<stringMessage>&user", "<user>"]
-                String[] messageStrSplit = splitInput[1].split("&"); //second split for msg ["<stringMessage>", "user"]
-                String messageRough = messageStrSplit[0]; //gets the message, but there are + in between the words
-                String messageFinal = messageRough.replace("+", " "); //replace all + with a space
+                String[] splitInput = url.getQuery().split("="); //["s", "<message>&user", "<user>"]
+                String[] messageStrSplit = splitInput[1].split("&"); //["<message>", "user"]
+                String messageRough = messageStrSplit[0]; //gets message
+                String messageFinal = messageRough.replace("+", " "); //replace all + w/ space
                 String userStr = splitInput[2]; //gets user from last elem in Input
                 String messageToAdd = String.format("%s: %s \n", userStr, messageFinal);
                 messages = messages + messageToAdd;
@@ -31,10 +29,8 @@ class Handler implements URLHandler {
         else {
         return String.format("add a message using: /add-message?s=<string>&user=<string>");
         }
-
     }
 }
-
 class ChatServer {
     public static void main(String[] args) throws IOException {
         if(args.length == 0){
