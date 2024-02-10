@@ -30,15 +30,47 @@ The bug, as the before-and-after code change required to fix it (as two code blo
   }
 
 ```
-A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)
+A failure-inducing input for the buggy program, as a JUnit test: 
 ```
 @Test
 public void testMultLowest() {
   double[] arrMultLowest = {2.0, 5.0, 6.0, 2.0};
   assertEquals(5.5, averageWithoutLowest(arrMultLowest);
+}
 ```
-This test aims to test `averageWithoutLowest` so the lowest number in the array has multiple occurrences. For example, the array I used was {2.0, 5.0, 6.0, 2.0} with 2.0 being the lowest number which occurs twice in the array. If we take the average without lowest, we would only consider 5.0 and 6.0, so the sum would be 11.0, and 11.0/2 should yield 5.5. However, if we run the code, we get 11.0 as the sum, but instead we divide the sum by `arr.length - 1`  Expected: 5.5. Actual: 3.6 error
+This test aims to test `averageWithoutLowest` so the lowest number in the array has multiple occurrences. For example, the array I used was {2.0, 5.0, 6.0, 2.0} with 2.0 being the lowest number which occurs twice in the array. If we take the average without lowest, we would only consider 5.0 and 6.0, so the sum would be 11.0, and 11.0/2 should yield 5.5. However, if we run the code, we get 11.0 as the sum, but instead we divide the sum by `arr.length - 1` which is 3 in this case since there are 4 elements in the array. This would give us a result of 3.6, which is not equal to the expected output of 5.5. 
 Testing if it handles the proper implementation of removing the lowest and getting the mean without it. Checks the symptom of the outputted value versus the expected and checks if they’re the same. Useful because there are variables that can be duplicates and situations where there is more than one lowest. 
+
+An input that doesn't induce a failure, as a JUnit test and any associated code (write it as a code block in Markdown):
+```
+@Test
+public void testLowestSum() {
+  double[] arrLowest = {1.0, 7.0, 9.0};
+  assertEquals(8.0, averageWithoutLowest(arrLowest);
+}```
+
+
+The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown):
+Before the code change:
+```
+double sum = 0;
+    for(double num: arr) {
+      if(num != lowest) { sum += num; }
+    }
+    return sum / (arr.length - 1);
+```
+
+The fixed code after the code change:
+```
+double sum = 0;
+    int numElems = 0;
+    for(double num: arr) {
+      if(num != lowest) { 
+        numElems += 1;
+        sum += num; }
+    }
+    return sum / numElems;
+```
 
 This is testing for how we divide the sum at the end. In this test, there are multiple elements that are the lowest in the array, but the code only subtracts 1 from the length, when it should subtract 2. 
 
