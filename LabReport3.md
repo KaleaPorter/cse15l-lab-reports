@@ -100,6 +100,10 @@ Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-996
 
   
 **Example 1**  
+```
+[user@sahara ~/docsearch/technical/911report]$ grep -x "            FROM THREAT TO THREAT" chapter-6.txt
+            FROM THREAT TO THREAT
+```
 
 In this example, I used `grep -x "            FROM THREAT TO THREAT" chapter-6.txt` in the `911report` directory, searching for all lines that are exactly the same as the line: `"            FROM THREAT TO THREAT"` in the file `chapter-6.txt`. The output of the line is printed out to us when it matches the parameter.   the letter e in them for all files and directories in `docsearch`. This is useful when you want to check for a complete match, not just a match anywhere within the line. For example, if I wanted to verify data in a file matched exactly what I inputted in the parameters, it would be best to use `-x`. 
 Source: ChatGPT
@@ -117,8 +121,30 @@ I used the "Data Validation" example that ChatGPT discusses in its answer.
 
 
 **Example 2**  
+```
+[user@sahara ~/docsearch/technical/biomed]$ grep -x -c "        Background" *
+1468-6708-3-10.txt:0
+1468-6708-3-1.txt:0
+1468-6708-3-3.txt:0
+1468-6708-3-4.txt:0
+1468-6708-3-7.txt:1
+1471-2091-2-10.txt:1
+1471-2091-2-11.txt:0
+1471-2091-2-12.txt:1
+1471-2091-2-13.txt:1
+1471-2091-2-16.txt:1
+1471-2091-2-5.txt:1
+1471-2091-2-7.txt:1
+1471-2091-2-9.txt:1
+1471-2091-3-13.txt:1
+1471-2091-3-14.txt:1
+1471-2091-3-15.txt:1
+1471-2091-3-16.txt:1
+... lines removed ...
+bcr635.txt:0
+```
 
-In this next example, I used `grep -x -c "        Background" *` in the `911report` directory. This time I used the `-x` command with `-c`, which counts the number of lines in each file that contain the exact line I inputted. As you can see in the terminal, each file is displayed in the format `file.txt: <countNumber>` where we see some files have the complete line `"        Background"` once in the file or not at all in the file. Using `c` with `-x` is really useful when we don't want to see the line printed directly, but we want to get a count for how many lines in a file match what we inputted. This could be useful in a project where you are analyzing speech patterns and you are counting up certain specific patterns of speech, for example. 
+In this next example, I used `grep -x -c "        Background" *` in the `biomed` directory. This time I used the `-x` command with `-c`, which counts the number of lines in each file that contain the exact line I inputted. As you can see in the terminal, each file is displayed in the format `file.txt: <countNumber>` where we see some files have the complete line `"        Background"` once in the file or not at all in the file. Using `c` with `-x` is really useful when we don't want to see the line printed directly, but we want to get a count for how many lines in a file match what we inputted. This could be useful in a project where you are analyzing speech patterns and you are counting up certain specific patterns of speech, for example. 
 Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)
 Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-99633/index.html) 
 
@@ -130,11 +156,55 @@ Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-996
    Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)
    
 **Example 1**  
-
+```
+[user@sahara ~/docsearch]$ grep -v e *
+DocSearchServer.java:import java.util.ArrayList;
+DocSearchServer.java:import java.util.List;
+DocSearchServer.java:
+DocSearchServer.java:            }
+DocSearchServer.java:        }
+DocSearchServer.java:        }
+DocSearchServer.java:    }
+DocSearchServer.java:    }
+DocSearchServer.java:}
+DocSearchServer.java:
+DocSearchServer.java:    }
+DocSearchServer.java:                       foundPaths.add(f.toString());
+...lines removed...
+TestDocSearch.java:}
+TestDocSearch.java:}
+TestDocSearch.java:
+```
 In this example, I used `grep -v e *` on the `docsearch` directory, searching for all lines that do *not* contain the letter e in them for all files and directories in `docsearch`. This is useful when looking for lines that do not contain a certain element or pattern, in this case, looking for any line without the letter e.
 
 **Example 2**  
+```
+[user@sahara ~/docsearch/technical/911report]$ grep -v a chapter-1.txt
 
+
+
+"WE HAVE SOME PLANES"
+
+
+
+INSIDE THE FOUR FLIGHTS
+
+...lines removed...
+
+NATIONAL CRISIS MANAGEMENT
+
+
+
+
+
+
+
+
+
+
+The Agencies Confer
+...more blank lines below...
+```
 In this next example, I used `grep -v a chapter-1.txt` in the `911report` directory. This time I did this operation only on the `chapter-1.txt` file. As you can see, `grep -v` prints out all the lines in `chapter-1.txt` that do not have "a" in them. Just to note, the line that has the word "PLANES" does technically have the letter "A" in it, but `grep -v` is case sensitive so does not count "A" as equal to "a". I used vowels because they are very common and would eliminate a lot of text from being returned, but in cases where you would want to perform an operation on lines that did not contain a certain element, this command would be especially useful. 
 
 Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-99633/index.html)  
@@ -143,6 +213,20 @@ Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-996
        -i, --ignore-case
               Ignore case distinctions in patterns and input data, so
               that characters that differ only in case match each other.
+**Example 1**  
+```
+[user@sahara ~/docsearch/technical/biomed]$ grep -i "cell" 1468-6708-3-7.txt
+          interstitial fluid volume, and extracellular fluid volume
+          Neurohormonal and Cellular Effects
+          Other mechanisms for cellular injury have been
+          antagonists alter cellular repair mechanisms, possibly
+```
+
+In this example, I used `grep -i "cell" 1468-6708-3-7.txt` in the `biomed` directory, 
+
+
+searching for all lines that are exactly the same as the line: `"            FROM THREAT TO THREAT"` in the file `chapter-6.txt`. The output of the line is printed out to us when it matches the parameter.   the letter e in them for all files and directories in `docsearch`. This is useful when you want to check for a complete match, not just a match anywhere within the line. For example, if I wanted to verify data in a file matched exactly what I inputted in the parameters, it would be best to use `-x`. 
+
 
 4. 
        -e PATTERNS, --regexp=PATTERNS
@@ -200,31 +284,8 @@ grep -c -e "levels" -e "trials" *
 1471-2091-2-13.txt:0
 1471-2091-2-16.txt:0
 1471-2091-2-5.txt:16
-1471-2091-2-7.txt:1
-1471-2091-2-9.txt:0
-1471-2091-3-13.txt:0
-1471-2091-3-14.txt:14
-1471-2091-3-15.txt:0
-1471-2091-3-16.txt:0
-1471-2091-3-17.txt:0
-1471-2091-3-18.txt:2
-1471-2091-3-22.txt:3
-1471-2091-3-23.txt:0
-1471-2091-3-30.txt:2
-1471-2091-3-31.txt:1
-1471-2091-3-4.txt:15
-1471-2091-3-8.txt:2
-1471-2091-4-1.txt:0
-1471-2091-4-5.txt:1
-1471-2105-1-1.txt:0
-1471-2105-2-1.txt:1
-1471-2105-2-8.txt:0
-1471-2105-2-9.txt:0
-1471-2105-3-12.txt:1
-1471-2105-3-14.txt:0
-1471-2105-3-16.txt:0
-1471-2105-3-17.txt:18
-etc...
+... lines removed ...
+bcr635.txt:0
 ```
 In this next example, I used `grep -c -e "levels" -e "trials" *` in the `biomed` directory. I did this operation on all the files in the `biomed` directory and used `-c` to count the number of occurrences. This is helpful to see the number of times multiple patters occurred in each file. This can be useful for figuring out the number of occurrences for pattern 1 AND pattern 2, which could be used in data analysis.  
 Source: `man grep`  
