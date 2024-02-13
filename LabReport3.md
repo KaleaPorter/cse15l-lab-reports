@@ -90,14 +90,15 @@ Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)
 Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-99633/index.html) 
 
 
-
-1. 
- -x, --line-regexp
+1.
+       -x, --line-regexp
               "Select only those matches that exactly match the whole
               line.  For a regular expression pattern, this is like
               parenthesizing the pattern and then surrounding it with ^
               and $."
    Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)
+
+  
 **Example 1**  
 
 In this example, I used `grep -x "            FROM THREAT TO THREAT" chapter-6.txt` in the `911report` directory, searching for all lines that are exactly the same as the line: `"            FROM THREAT TO THREAT"` in the file `chapter-6.txt`. The output of the line is printed out to us when it matches the parameter.   the letter e in them for all files and directories in `docsearch`. This is useful when you want to check for a complete match, not just a match anywhere within the line. For example, if I wanted to verify data in a file matched exactly what I inputted in the parameters, it would be best to use `-x`. 
@@ -116,11 +117,13 @@ I used the "Data Validation" example that ChatGPT discusses in its answer.
 
 
 **Example 2**  
+
 In this next example, I used `grep -x -c "        Background" *` in the `911report` directory. This time I used the `-x` command with `-c`, which counts the number of lines in each file that contain the exact line I inputted. As you can see in the terminal, each file is displayed in the format `file.txt: <countNumber>` where we see some files have the complete line `"        Background"` once in the file or not at all in the file. Using `c` with `-x` is really useful when we don't want to see the line printed directly, but we want to get a count for how many lines in a file match what we inputted. This could be useful in a project where you are analyzing speech patterns and you are counting up certain specific patterns of speech, for example. 
 Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)
+Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-99633/index.html) 
 
 
-3. grep -v
+2.
        -v, --invert-match
               "Invert the sense of matching, to select non-matching
               lines."
@@ -131,20 +134,29 @@ Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)
 In this example, I used `grep -v e *` on the `docsearch` directory, searching for all lines that do *not* contain the letter e in them for all files and directories in `docsearch`. This is useful when looking for lines that do not contain a certain element or pattern, in this case, looking for any line without the letter e.
 
 **Example 2**  
+
 In this next example, I used `grep -v a chapter-1.txt` in the `911report` directory. This time I did this operation only on the `chapter-1.txt` file. As you can see, `grep -v` prints out all the lines in `chapter-1.txt` that do not have "a" in them. Just to note, the line that has the word "PLANES" does technically have the letter "A" in it, but `grep -v` is case sensitive so does not count "A" as equal to "a". I used vowels because they are very common and would eliminate a lot of text from being returned, but in cases where you would want to perform an operation on lines that did not contain a certain element, this command would be especially useful. 
 
 Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-99633/index.html)  
 
-4. 
+3. 
        -i, --ignore-case
               Ignore case distinctions in patterns and input data, so
               that characters that differ only in case match each other.
-5. 
-       -f FILE, --file=FILE
-              Obtain patterns from FILE, one per line.  If this option
-              is used multiple times or is combined with the -e
-              (--regexp) option, search for all patterns given.  The
-              empty file contains zero patterns, and therefore matches
-              nothing.  If FILE is - , read patterns from standard
-              input.
+
+4. 
+       -e PATTERNS, --regexp=PATTERNS
+              Use PATTERNS as the patterns.  If this option is used
+              multiple times or is combined with the -f (--file) option,
+              search for all patterns given.
+
+**Example 1**  
+
+In this example, I used `grep -e "Arabic -e "United States chapter-2.txt` on the `911report` directory to search for all lines in the file `chapter-2.txt` that contain either `Arabic` or `United States`e in them. This is useful when looking for multiple patterns in a file or multiple files. This allows me to broaden my search to all lines that contain any of my inputs. For this, I put `-e` in front of each parameter I want to search for.  
+
+**Example 2**  
+
+In this next example, I used `grep -v a chapter-1.txt` in the `911report` directory. This time I did this operation only on the `chapter-1.txt` file. As you can see, `grep -v` prints out all the lines in `chapter-1.txt` that do not have "a" in them. Just to note, the line that has the word "PLANES" does technically have the letter "A" in it, but `grep -v` is case sensitive so does not count "A" as equal to "a". I used vowels because they are very common and would eliminate a lot of text from being returned, but in cases where you would want to perform an operation on lines that did not contain a certain element, this command would be especially useful.  
+Source: `man grep`  
+Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)  
 
