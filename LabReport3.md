@@ -151,12 +151,82 @@ Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-996
               search for all patterns given.
 
 **Example 1**  
-
+```
+[user@sahara ~/docsearch/technical/911report]$ grep -e "Arabic" -e "United States" chapter-2.txt
+                physician, Ayman al Zawahiri, arranged from their Afghan headquarters for an Arabic
+                accepted way to transliterate Arabic words and names into English. We have relied on
+                a mix of common sense, the sound of the name in Arabic, and common usage in source
+                since 1992 that singled out the United States for attack. In August 1996, Bin Ladin
+                the United States "left the area carrying disappointment, humiliation, defeat and
+                "the United States rushed out of Somalia in shame and disgrace." Citing the Soviet
+            Plans to attack the United States were developed with unwavering singlemindedness
+                and economic malaise. He also stresses grievances against the United States widely
+                government to study in the United States in the late 1940s, Qutb returned with an
+                the United States because of issues ranging from Iraq to Palestine to America's
+            Bin Ladin's grievance with the United States may have started in reaction to specific
+                of mankind." If the United States did not comply, it would be at war with the
+                the world, including the United States. Some were set up by Islamic extremists or
+                United States supplied billions of dollars worth of secret assistance to rebel
+                they received little or no assistance from the United States.
+                1980s, Abdel Rahman found refuge in the United States. From his headquarters in
+            This pattern of expansion through building alliances extended to the United States. A
+                participate in terrorist actions in the United States in the early 1990s and in al
+            Bin Ladin began delivering diatribes against the United States before he left Saudi
+                the United States. Not long afterward, senior al Qaeda operatives and trainers
+                came to power in Khartoum, the United States and other Western governments had
+                Sudanese-born Arab, had spent time in the United States and had been recruited for
+                informant for the United States. Also testifying about al Qaeda in a U.S. court was
+                enterprise for war against the United States.
+                In March 1998, after Bin Ladin's public fatwa against the United States, two al
+                indicate some common themes in both sides' hatred of the United States. But to date
+                United States.
+                former Egyptian army officer who had moved to the United States in the mid-1980s,
+                United States to appear before a grand jury investigating Bin Ladin, the job of cell
+                Afghanistan. A week later, it appeared in Al Quds al Arabi, the same Arabic-language
+```
 In this example, I used `grep -e "Arabic -e "United States chapter-2.txt` on the `911report` directory to search for all lines in the file `chapter-2.txt` that contain either `Arabic` or `United States`e in them. This is useful when looking for multiple patterns in a file or multiple files. This allows me to broaden my search to all lines that contain any of my inputs. For this, I put `-e` in front of each parameter I want to search for.  
 
 **Example 2**  
-
-In this next example, I used `grep -v a chapter-1.txt` in the `911report` directory. This time I did this operation only on the `chapter-1.txt` file. As you can see, `grep -v` prints out all the lines in `chapter-1.txt` that do not have "a" in them. Just to note, the line that has the word "PLANES" does technically have the letter "A" in it, but `grep -v` is case sensitive so does not count "A" as equal to "a". I used vowels because they are very common and would eliminate a lot of text from being returned, but in cases where you would want to perform an operation on lines that did not contain a certain element, this command would be especially useful.  
+```
+grep -c -e "levels" -e "trials" *
+1468-6708-3-10.txt:2
+1468-6708-3-1.txt:12
+1468-6708-3-3.txt:14
+1468-6708-3-4.txt:11
+1468-6708-3-7.txt:13
+1471-2091-2-10.txt:3
+1471-2091-2-11.txt:3
+1471-2091-2-12.txt:0
+1471-2091-2-13.txt:0
+1471-2091-2-16.txt:0
+1471-2091-2-5.txt:16
+1471-2091-2-7.txt:1
+1471-2091-2-9.txt:0
+1471-2091-3-13.txt:0
+1471-2091-3-14.txt:14
+1471-2091-3-15.txt:0
+1471-2091-3-16.txt:0
+1471-2091-3-17.txt:0
+1471-2091-3-18.txt:2
+1471-2091-3-22.txt:3
+1471-2091-3-23.txt:0
+1471-2091-3-30.txt:2
+1471-2091-3-31.txt:1
+1471-2091-3-4.txt:15
+1471-2091-3-8.txt:2
+1471-2091-4-1.txt:0
+1471-2091-4-5.txt:1
+1471-2105-1-1.txt:0
+1471-2105-2-1.txt:1
+1471-2105-2-8.txt:0
+1471-2105-2-9.txt:0
+1471-2105-3-12.txt:1
+1471-2105-3-14.txt:0
+1471-2105-3-16.txt:0
+1471-2105-3-17.txt:18
+etc...
+```
+In this next example, I used `grep -c -e "levels" -e "trials" *` in the `biomed` directory. I did this operation on all the files in the `biomed` directory and used `-c` to count the number of occurrences. This is helpful to see the number of times multiple patters occurred in each file. This can be useful for figuring out the number of occurrences for pattern 1 AND pattern 2, which could be used in data analysis.  
 Source: `man grep`  
 Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)  
 
