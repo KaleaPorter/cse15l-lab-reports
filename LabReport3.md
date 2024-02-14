@@ -84,10 +84,7 @@ For example, we saw the -name option for find in class. For each of those option
 
 That makes 8 total examples, all focused on a single command. There should be two examples each for four different command-line options. Many commands like these have pretty sophisticated behavior possible – it can take years to be exposed to and learn all of the possible tricks and inner workings.
 
-Along with each option/mode you show, cite your source for how you found out about it as a URL or a description of where you found it. See the syllabus on Academic Integrity and how to cite sources like ChatGPT for this class.
-
-Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html) 
-Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-99633/index.html) 
+Along with each option/mode you show, cite your source for how you found out about it as a URL or a description of where you found it. See the syllabus on Academic Integrity and how to cite sources like ChatGPT for this class.  
 
 
 1.
@@ -222,11 +219,39 @@ Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-996
           antagonists alter cellular repair mechanisms, possibly
 ```
 
-In this example, I used `grep -i "cell" 1468-6708-3-7.txt` in the `biomed` directory, 
+In this example, I used `grep -i "cell" 1468-6708-3-7.txt` in the `biomed` directory on the file `1468-6708-3-7.txt`. I was searching for the word "cell", using the `-i` command to ignore any case sensitivity. As seen in the output, lines containing the word "cell" show up with both a lowercase and a capital c. This can be useful when you are trying to search for a keyword but are unsure about if it is uppercase, lowercase, or both. This will make sure that you will get all the instances of the keyword you are searching.  
+Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)
 
-
-searching for all lines that are exactly the same as the line: `"            FROM THREAT TO THREAT"` in the file `chapter-6.txt`. The output of the line is printed out to us when it matches the parameter.   the letter e in them for all files and directories in `docsearch`. This is useful when you want to check for a complete match, not just a match anywhere within the line. For example, if I wanted to verify data in a file matched exactly what I inputted in the parameters, it would be best to use `-x`. 
-
+**Example 2**  
+```
+[user@sahara ~/docsearch/technical/911report]$ grep -i "security" *
+chapter-10.txt:                President's remarks, while the lead Secret Service agent reviewed the security
+chapter-10.txt:                for security reasons was taped and not broadcast live, and the traveling party
+chapter-10.txt:                narrowly escaped direct attack. Extraordinary security precautions were put in place
+chapter-10.txt:            Following his speech, President Bush met again with his National Security Council
+chapter-10.txt:                    airspace reopened for use by airports that met newly improvised security
+chapter-10.txt:                Deciding when and how to return border and port security to more normal
+chapter-10.txt:                task, none had security as its primary mission. By September 14, Vice President
+chapter-10.txt:                security adviser and Homeland Security Council-paralleling the National Security
+chapter-10.txt:                Director Robert Mueller. From the White House staff, National Security Advisor
+chapter-10.txt:            In this restricted National Security Council meeting, the President said it was a
+chapter-10.txt:                imprisoned foreigners; and comply with all UN Security Council resolutions.
+chapter-10.txt:                National Security Presidential Directive 9, now titled "Defeating the Terrorist
+chapter-10.txt:                    of what the armed forces call "security and stability operations."
+chapter-11.txt:                U.S. spending on national security was cut following the end of the Soviet military
+chapter-11.txt:                Caucasus" (June 1999), "Bin Ladin to Exploit Looser Security During
+chapter-11.txt:                these scenarios were slow to work their way into the thinking of aviation security
+chapter-11.txt:                security in the United States. The Gore Commission's report, having thoroughly
+chapter-11.txt:                airport and airline security procedures.
+chapter-11.txt:                Security Group devoted largely to the possibility of a possible airplane hijacking
+chapter-11.txt:                Aviation Security intelligence office summarized the Bin Ladin hijacking threat.
+chapter-11.txt:            4. Neither the intelligence community nor aviation security experts analyzed systemic
+chapter-11.txt:                the systemic issues of how to strengthen the layered security defenses to protect
+... lines removed ...
+preface.txt:                and national security did not understand how grave this threat could be, and did not
+```
+In this example, I used `grep -i "security" *` in the `911report` directory on all the files. I was searching for the word "security", using the `-i` command to ignore any case sensitivity. As seen in the output, lines containing the word "security" show up with the word regardness of lowercase and uppercase. This helped me get all words resembling "security" without worrying about uppercase and lowercase.  
+Source link: [Link](https://man7.org/linux/man-pages/man1/grep.1.html)
 
 4. 
        -e PATTERNS, --regexp=PATTERNS
@@ -269,7 +294,7 @@ searching for all lines that are exactly the same as the line: `"            FRO
                 Afghanistan. A week later, it appeared in Al Quds al Arabi, the same Arabic-language
 ```
 In this example, I used `grep -e "Arabic -e "United States chapter-2.txt` on the `911report` directory to search for all lines in the file `chapter-2.txt` that contain either `Arabic` or `United States`e in them. This is useful when looking for multiple patterns in a file or multiple files. This allows me to broaden my search to all lines that contain any of my inputs. For this, I put `-e` in front of each parameter I want to search for.  
-
+Source link: [Link](https://docs.oracle.com/cd/E19253-01/806-7612/filesearch-99633/index.html)
 **Example 2**  
 ```
 grep -c -e "levels" -e "trials" *
