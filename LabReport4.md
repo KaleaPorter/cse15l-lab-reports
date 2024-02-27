@@ -2,7 +2,7 @@
 
 ## Step 4
 **Log into ieng6**  
-![Image](step4.png)  
+![Image](step4new.png)  
 Keys pressed: `Ctrl-R` ssh `<enter>`
 The ssh `klporter@ieng6-202.ucsd.edu` command was somewhere in my search history, but I wasn’t sure so I used `Ctrl-R` to search for it and hit enter. 
 Keys pressed: cs15`<tab><enter>`
