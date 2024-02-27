@@ -54,4 +54,4 @@ git add L`<tab>`.java`<enter>`
 git commit -m “changed to index2”`<enter>`
 git push
 I just typed in most of my commands and used the tab keys when I could. I found out that git add was necessary to update what will be committed, and then I was able to successfully commit and push to my github. Here is my github with the corrected changes:
-
+![Image](github.png)  
