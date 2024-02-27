@@ -2,7 +2,7 @@
 
 ## Step 4
 **Log into ieng6**  
-![Image]
+![Image](step4.png)  
 Keys pressed: `Ctrl-R` ssh `<enter>`
 The ssh `klporter@ieng6-202.ucsd.edu` command was somewhere in my search history, but I wasn’t sure so I used `Ctrl-R` to search for it and hit enter. 
 Keys pressed: cs15`<tab><enter>`
@@ -11,13 +11,13 @@ I used the tab key to finish writing cs15lwi24 to log into class and hit enter.
 
 ## Step 5
 **Clone your fork of the repository from your Github account (using the SSH URL)**  
-![Image]  
+![Image](step5.png)  
 Keys pressed: `<Ctrl-C>` to copy the SSH URL, then `<Ctrl-V><right-click>` to paste the URL. 
 This was used to be `git clone git@github.com:KaleaPorter/lab7.git` with the ssh link to clone the lab 7 repository into ieng6.  
 
 ## Step 6  
 **Run the tests, demonstrating that they fail**  
-![Image]  
+![Image](step6Real.png)  
 Keys pressed: cd l`<tab>` 
 change the current directory tolab7/.
 Keys pressed: `<up><up><up><up><backspace><backspace><backspace><backspace><backspace><backspace>` List`<tab>`T`<tab><enter>`
@@ -28,7 +28,7 @@ The java command was 7 up in the search history, so I used the up arrow to acces
 
 ## Step 7  
 **Edit the code file to fix the failing test**  
-![Image]  
+![Image](step7.png)  
 Keys pressed: `vim` L`<tab>`.java`<enter>`  
 `j` 44 lines down  
 `l` 11 times to go right  
@@ -40,7 +40,7 @@ I used `vim` to edit the `ListExamples.java` file. Once in the `vim` editor, I w
 
 ## Step 8  
 **Run the tests, demonstrating that they now succeed**  
-![Image]  
+![Image](step8.png)  
 Keys pressed: `<up><up><up><enter>`
 The javac compile command was 3 up in the search history, so I used the up arrow to access it then pressed enter.
 `<up><up><up><enter>`
@@ -49,7 +49,7 @@ The java compile command was 3 up in the search history, so I used the up arrow 
 
 ## Step 9  
 **Commit and push the resulting change to your Github account (you can pick any commit message!)**
-![Image]  
+![Image](step9.png)  
 git add L`<tab>`.java`<enter>`
 git commit -m “changed to index2”`<enter>`
 git push
