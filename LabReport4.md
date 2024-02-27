@@ -11,7 +11,7 @@ I used the tab key to finish writing cs15lwi24 to log into class and hit enter.
 
 ## Step 5
 **Clone your fork of the repository from your Github account (using the SSH URL)**  
-![Image](step5.png)  
+![Image](gitClone.png)  
 Keys pressed: `<Ctrl-C>` to copy the SSH URL, then `<Ctrl-V><right-click>` to paste the URL. 
 This was used to be `git clone git@github.com:KaleaPorter/lab7.git` with the ssh link to clone the lab 7 repository into ieng6.  
 
