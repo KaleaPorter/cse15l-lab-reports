@@ -34,7 +34,8 @@ Keys pressed: `vim` L`<tab>`.java`<enter>`
 `l` 11 times to go right  
 `x` to delete 1  
 `i` 2 to insert 2 in the place of the previous 1  
-:wq<enter>  
+`:wq<enter>`  
+
 I used `vim` to edit the `ListExamples.java` file. Once in the `vim` editor, I was able to navigate to `index1` and change it to `index2`. I moved down and right because my cursor started at the top right once I entered vim. After deleting 1 and inserting 2, I went back to normal mode to save and exit.  
 
 
