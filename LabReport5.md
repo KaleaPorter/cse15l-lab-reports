@@ -1,5 +1,5 @@
 # Lab Report 5  
-## Part 1 – Implementation Polishing  
+## Part 1 – Debugging Scenario
 
 
 **EdStem Post:**
