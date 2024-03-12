@@ -58,6 +58,9 @@ Thank you! I see that I assumed that there would only be one lowest value, and m
 
 ## The file & directory structure needed  
 ![Image](structure.png)  
+I have a `calculator.java` file that has my main code for calculating the average (without the lowest numbers) and a `calculator.class` file from compiling. I also have a `calculatorTests.java` file that I use to test my code, and similarly a `calculatorTests.class` file from compiling this. I also have one bash file called `test.sh` that I use to run the commands that compile and run my tests. Because my test file uses JUnit, I also had to upload the `hamcrest` and `JUnit` files located in the `lib` folder.  
+
+
 ## The contents of each file before fixing the bug  
 Before fixing the bug:  
 1. calculator.java
