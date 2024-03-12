@@ -6,5 +6,6 @@ This is the hub for CSE 15L lab reports. You can find them below:
 - Lab 2 - [Lab2Report](https://kaleaporter.github.io/cse15l-lab-reports/LabReport2.html)
 - Lab 3 - [Lab3Report](https://kaleaporter.github.io/cse15l-lab-reports/LabReport3.html)
 - Lab 4 - [Lab4Report](https://kaleaporter.github.io/cse15l-lab-reports/LabReport4.html)  
+- Lab 5 - [Lab4Report](https://kaleaporter.github.io/cse15l-lab-reports/LabReport5.html)  
 
 
