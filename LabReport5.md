@@ -52,4 +52,64 @@ Thank you! I see that I assumed that there would only be one lowest value, and m
 ![Image](pass.png)  
 
 
+## The file & directory structure needed  
+![Image](structure.png)  
+## The contents of each file before fixing the bug  
+Before fixing the bug:  
+1. calculator.java
+```
+public class calculator {
+    static double averageWithoutLowest(double[] arr) {
+        if(arr.length < 2) { return 0.0; }
+        double lowest = arr[0];
+        for(double num: arr) {
+            if(num < lowest) { lowest = num; }
+        }
+        double sum = 0;
+        for(double num: arr) {
+            if(num != lowest) { sum += num; }
+        }
+        return sum / (arr.length - 1);
+    }
+}
+```
+2. calculatorTests.java
+```
+public class calculatorTests {
+    @Test
+    public void testLowestSum() {
+        double[] arrLowest = {1.0, 7.0, 9.0};
+        double result1 = calculator.averageWithoutLowest(arrLowest);
+        assertEquals(8.0, result1, 0.00001);
+    }
+    @Test
+    public void testMultLowest() {
+        double[] arrMultLowest = {2.0, 5.0, 6.0, 2.0};
+        double result2 = calculator.averageWithoutLowest(arrMultLowest);
+        assertEquals(5.5, result2, 0.000001);
+    }
+}
+```
+3. test.sh
+```
+set -e
+CPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
+
+javac -cp $CPATH *.java
+# javac calculatorTests.java
+if [ $? -ne 0 ]
+then 
+    echo "Compilation Error"
+    exit 1
+fi
+# java calculatorTests
+
+java -cp $CPATH org.junit.runner.JUnitCore calculatorTests
+```
+
+## The full command line (or lines) you ran to trigger the bug  
+see `test.sh` above
+I just ran `bash test.sh` in the terminal.  
+
+## A description of what to edit to fix the bug  
 
