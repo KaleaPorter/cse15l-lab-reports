@@ -1,7 +1,11 @@
+# Lab Report 5  
+## Part 1 – Implementation Polishing  
 
+
+**EdStem Post:**
 ### Test Failure Calculation Help
-Anonymous:
-Hi,
+*Anonymous:*  
+Hi,  
 When I run my tests for my calculator class I get a failure on one of my tests that I'm having trouble debugging. I am expecting to get 5.5 for the average in a test case that tests `{2, 5, 6, 2}` but am instead getting 3.6666. How do I debug this?
 ![Image](question.png)  
 
@@ -48,7 +52,7 @@ Check the difference between your test cases, specifically what you are expectin
 Try looking at how you update your local variables and why having two lowest values differ from just having one.  
 
 ### Student Reponse
-Thank you! I see that I assumed that there would only be one lowest value, and my test failed because there were two elements that were both equal to the minimum. Since I was dividing my sum by the length of the array - 1, I missed this edge case. To fix this, I created a count variable that would increment each time I added to the sum, then divided the sum by the count to avoid this issue. My tests ended up passing!
+Thank you! I see that I assumed that there would only be one lowest value, and my test failed because there were two elements that were both equal to the minimum. Since I was dividing my sum by `arr.length - 1`, I missed this edge case. To fix this, I created a `count` variable that would increment each time I added to the sum, then divided the sum by the `count` to avoid this issue. My tests ended up passing!
 ![Image](pass.png)  
 
 
@@ -108,8 +112,24 @@ java -cp $CPATH org.junit.runner.JUnitCore calculatorTests
 ```
 
 ## The full command line (or lines) you ran to trigger the bug  
-see `test.sh` above
-I just ran `bash test.sh` in the terminal.  
+I ran `bash test.sh` in the terminal (see `test.sh` above).   
 
 ## A description of what to edit to fix the bug  
+The original code assumed that the average would always be the sum divided by `arr.length - 1`. This assumes that there is only one element in the list that is not added to the sum. This is not always the case. Since calculating the sum compares the number to the minimum, any number that equals the lowest number is excluded from the sum, and therefore should not be counted in the average calculation. However, if we have an array with multiple numbers that match the lowest, we don't account for the extra numbers. This is why I needed to add the `count` variable.
+```
+        double sum = 0;
+        int count = 0; <-- new local variable
+        for(double num: arr) {
+            if(num != lowest) { 
+                sum += num; 
+                count += 1; <-- increments to accurately get number of values
+            }
+        }
+        return sum / count; <-- passes edge cases described in the tester
+```
+The above code shows the changed code after calculating the lowest number. By incrementing the `count` variable only when a number is NOT equal to `lowest`, we make sure that we only divide the sum by the number of elements that are counted in the average calculation.
+
+
+## Part 2 – Reflection
+I really enjoyed learning about `vim` during this second half of the quarter. Vim tutor was super useful and interactive, and it really helped me understand how to do text editing within the command line. It felt really rewarding to use some of the shortcuts and make edits straight from the command line, and it is something that I feel more comfortable with doing in the future.  
 
